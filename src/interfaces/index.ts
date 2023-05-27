@@ -18,3 +18,17 @@ export interface IComment {
   userId?: number;
   postId: number;
 }
+
+export interface IPersonalInfo {
+  id?: number;
+  name: string;
+  last_name: string;
+  second_last_name: string;
+  gender: string;
+  gender_other: string;
+  date_of_birth: string;
+  city_of_birth: string;
+  state_of_birth: string;
+  country_of_birth: string;
+  user_id: number;
+}

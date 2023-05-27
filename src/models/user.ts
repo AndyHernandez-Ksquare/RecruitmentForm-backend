@@ -6,7 +6,6 @@ import {
   InferCreationAttributes,
   CreationOptional,
 } from "sequelize";
-import { IUser } from "../interfaces";
 
 class User extends Model<InferAttributes<User>, InferCreationAttributes<User>> {
   declare id: CreationOptional<number>;
