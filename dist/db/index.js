@@ -14,10 +14,12 @@ const sequelize_1 = require("sequelize");
 const Post_1 = require("../models/Post");
 const user_1 = require("../models/user");
 const Comments_1 = require("../models/Comments");
+const personalinfo_1 = require("../models/personalinfo");
 let sequelize;
 const startDB = (url) => __awaiter(void 0, void 0, void 0, function* () {
     sequelize = new sequelize_1.Sequelize(url);
     (0, user_1.setupUser)(sequelize);
+    (0, personalinfo_1.setupPersonalInfo)(sequelize);
     (0, Post_1.setupPost)(sequelize);
     (0, Comments_1.setupComment)(sequelize);
     return sequelize;

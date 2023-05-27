@@ -30,3 +30,5 @@ app.listen(PORT, async () => {
 // Commands to create and run migration
 //1. Create: npx sequelize-cli db:migrate
 // 2. Run: npx sequelize-cli db:migrate --env development
+// 3. Add migration file: npx sequelize-cli migration:generate --name add-association-personalInfo-user
+// 3 Undo latest migration: sequelize db:migrate:undo
