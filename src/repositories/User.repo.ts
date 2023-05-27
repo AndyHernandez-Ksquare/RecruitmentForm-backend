@@ -4,16 +4,18 @@ import User from "../models/user";
 import { IUser } from "../interfaces";
 
 export const createUser = async ({
+  id,
   firstName,
-  userName,
+  username,
   lastName,
   phone,
   email,
 }: IUser): Promise<User | null> => {
   try {
     const response = await User.create({
+      id,
       firstName,
-      userName,
+      username,
       lastName,
       phone,
       email,
@@ -25,8 +27,8 @@ export const createUser = async ({
   }
 };
 
-export const readUser = async (id: number): Promise<User | null> => {
-  const response = await User.findByPk(id);
+export const readUser = async (username: string): Promise<User | null> => {
+  const response = await User.findOne({ where: { username } });
 
   return response;
 };

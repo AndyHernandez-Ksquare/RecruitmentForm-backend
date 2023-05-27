@@ -6,7 +6,12 @@ class User extends sequelize_1.Model {
 }
 const setupUser = (sequelize) => {
     User.init({
-        userName: sequelize_1.DataTypes.STRING,
+        id: {
+            type: sequelize_1.DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+        },
+        username: sequelize_1.DataTypes.STRING,
         firstName: sequelize_1.DataTypes.STRING,
         lastName: sequelize_1.DataTypes.STRING,
         email: sequelize_1.DataTypes.STRING,
