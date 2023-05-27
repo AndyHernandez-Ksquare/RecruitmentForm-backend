@@ -10,7 +10,7 @@ app.listen(PORT, async () => {
     if (URI_CONN) {
       const sequelize = await startDB(URI_CONN);
       await sequelize.authenticate();
-      await sequelize.sync();
+      // await sequelize.sync();
       console.log(`App is up and running at port ${PORT}`);
     }
   } catch (error) {
