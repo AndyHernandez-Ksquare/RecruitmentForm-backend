@@ -16,6 +16,7 @@ const personalinfo_1 = require("../models/personalinfo");
 const address_1 = require("../models/address");
 const addressextrainfo_1 = require("../models/addressextrainfo");
 const profile_1 = require("../models/profile");
+const academicinfo_1 = require("../models/academicinfo");
 let sequelize;
 const startDB = (url) => __awaiter(void 0, void 0, void 0, function* () {
     sequelize = new sequelize_1.Sequelize(url);
@@ -24,6 +25,7 @@ const startDB = (url) => __awaiter(void 0, void 0, void 0, function* () {
     (0, address_1.setupAddress)(sequelize);
     (0, addressextrainfo_1.setupAddressExtraInfo)(sequelize);
     (0, profile_1.setupProfile)(sequelize);
+    (0, academicinfo_1.setupAcademicInfo)(sequelize);
     return sequelize;
 });
 exports.startDB = startDB;

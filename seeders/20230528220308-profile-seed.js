@@ -11,7 +11,7 @@ module.exports = {
         alt_email: "user@example.com",
         reference: "google",
         other_reference: "TikTok",
-        user_id: 5,
+        user_id: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
