@@ -63,3 +63,12 @@ export interface IProfile {
   other_reference: string;
   user_id: number;
 }
+
+export interface IAcademicInfo {
+  id?: number;
+  software_devel_comments: string;
+  degree_level: string;
+  informal_education: string;
+  other_education: string;
+  user_id: number;
+}
