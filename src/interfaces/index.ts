@@ -34,6 +34,7 @@ export interface IPersonalInfo {
 }
 
 export interface IAddress {
+  id?: number;
   street: string;
   in_between_street_a: string;
   in_between_street_b: string;
@@ -42,5 +43,12 @@ export interface IAddress {
   country: string;
   zip: string;
   proof_of_address: string;
+  user_id: number;
+}
+
+export interface IAddrexxExtraInfo {
+  id?: number;
+  CURP: string;
+  identification_number: string;
   user_id: number;
 }
