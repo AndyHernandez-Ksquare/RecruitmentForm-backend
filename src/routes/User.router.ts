@@ -54,7 +54,7 @@ UserRouter.get("/", async (req: Request, res: Response) => {
   }
 });
 
-// Update user
+// UPDATE
 
 UserRouter.put("/:oldUsername", async (req: Request, res: Response) => {
   try {
@@ -91,7 +91,7 @@ UserRouter.put("/:oldUsername", async (req: Request, res: Response) => {
   }
 });
 
-// Delete User
+// DELETE
 
 UserRouter.delete("/:username", async (req: Request, res: Response) => {
   try {

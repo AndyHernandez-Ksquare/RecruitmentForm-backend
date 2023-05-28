@@ -55,7 +55,7 @@ exports.UserRouter.get("/", (req, res) => __awaiter(void 0, void 0, void 0, func
         return res.sendStatus(500);
     }
 }));
-// Update user
+// UPDATE
 exports.UserRouter.put("/:oldUsername", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { oldUsername } = req.params;
@@ -83,7 +83,7 @@ exports.UserRouter.put("/:oldUsername", (req, res) => __awaiter(void 0, void 0, 
         return res.sendStatus(500);
     }
 }));
-// Delete User
+// DELETE
 exports.UserRouter.delete("/:username", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { username } = req.params;

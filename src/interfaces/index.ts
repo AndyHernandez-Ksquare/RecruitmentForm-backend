@@ -32,3 +32,15 @@ export interface IPersonalInfo {
   country_of_birth: string;
   user_id: number;
 }
+
+export interface IAddress {
+  street: string;
+  in_between_street_a: string;
+  in_between_street_b: string;
+  city: string;
+  state: string;
+  country: string;
+  zip: string;
+  proof_of_address: string;
+  user_id: number;
+}

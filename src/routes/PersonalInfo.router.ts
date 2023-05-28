@@ -1,6 +1,5 @@
 import { Router, Request, Response } from "express";
-import { readPost, readAllPosts } from "../repositories/Post.repo";
-import { IPersonalInfo, IPost } from "../interfaces";
+import { IPersonalInfo } from "../interfaces";
 import User from "../models/user";
 import {
   createPersonalInfo,
@@ -29,7 +28,7 @@ PersonalInfoRouter.post("/", async (req: Request, res: Response) => {
     if (!userExists) {
       return res.sendStatus(400);
     }
-    const newPost = await createPersonalInfo({
+    const newPersonalInfo = await createPersonalInfo({
       name,
       last_name,
       second_last_name,
@@ -41,7 +40,7 @@ PersonalInfoRouter.post("/", async (req: Request, res: Response) => {
       country_of_birth,
       user_id,
     });
-    return res.send(newPost);
+    return res.send(newPersonalInfo);
   } catch (error) {
     console.error(error);
   }
@@ -53,15 +52,15 @@ PersonalInfoRouter.get(
   async (req: Request, res: Response) => {
     const { personalInfoId } = req.params;
     try {
-      const foundPost = await readPersonalInfo(+personalInfoId);
+      const foundPersonalInfo = await readPersonalInfo(+personalInfoId);
 
-      if (!foundPost) {
+      if (!foundPersonalInfo) {
         return res.sendStatus(404);
       }
 
       res.status(200);
 
-      return res.send(foundPost.toJSON());
+      return res.send(foundPersonalInfo.toJSON());
     } catch (error) {
       console.error(error);
       return res.sendStatus(400);
@@ -69,7 +68,7 @@ PersonalInfoRouter.get(
   }
 );
 
-// Update Personal Info
+// UPDATE
 
 PersonalInfoRouter.put(
   "/:personalInfoId",
@@ -116,7 +115,7 @@ PersonalInfoRouter.put(
   }
 );
 
-// Delete User
+// DELETE
 
 PersonalInfoRouter.delete(
   "/:personalInfoId",

@@ -25,7 +25,7 @@ exports.PersonalInfoRouter.post("/", (req, res) => __awaiter(void 0, void 0, voi
         if (!userExists) {
             return res.sendStatus(400);
         }
-        const newPost = yield (0, PersonalInfo_repo_1.createPersonalInfo)({
+        const newPersonalInfo = yield (0, PersonalInfo_repo_1.createPersonalInfo)({
             name,
             last_name,
             second_last_name,
@@ -37,7 +37,7 @@ exports.PersonalInfoRouter.post("/", (req, res) => __awaiter(void 0, void 0, voi
             country_of_birth,
             user_id,
         });
-        return res.send(newPost);
+        return res.send(newPersonalInfo);
     }
     catch (error) {
         console.error(error);
@@ -47,19 +47,19 @@ exports.PersonalInfoRouter.post("/", (req, res) => __awaiter(void 0, void 0, voi
 exports.PersonalInfoRouter.get("/:personalInfoId/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { personalInfoId } = req.params;
     try {
-        const foundPost = yield (0, PersonalInfo_repo_1.readPersonalInfo)(+personalInfoId);
-        if (!foundPost) {
+        const foundPersonalInfo = yield (0, PersonalInfo_repo_1.readPersonalInfo)(+personalInfoId);
+        if (!foundPersonalInfo) {
             return res.sendStatus(404);
         }
         res.status(200);
-        return res.send(foundPost.toJSON());
+        return res.send(foundPersonalInfo.toJSON());
     }
     catch (error) {
         console.error(error);
         return res.sendStatus(400);
     }
 }));
-// Update Personal Info
+// UPDATE
 exports.PersonalInfoRouter.put("/:personalInfoId", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { personalInfoId } = req.params;
@@ -86,7 +86,7 @@ exports.PersonalInfoRouter.put("/:personalInfoId", (req, res) => __awaiter(void 
         return res.sendStatus(400);
     }
 }));
-// Delete User
+// DELETE
 exports.PersonalInfoRouter.delete("/:personalInfoId", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { personalInfoId } = req.params;
