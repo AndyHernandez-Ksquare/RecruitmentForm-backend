@@ -2,14 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const User_router_1 = require("./User.router");
-const Comment_router_1 = require("./Comment.router");
 const PersonalInfo_router_1 = require("./PersonalInfo.router");
 const Address_router_1 = require("./Address.router");
 const AddressExtraInfo_router_1 = require("./AddressExtraInfo.router");
+const Profile_router_1 = require("./Profile.router");
 const APIRouter = (0, express_1.Router)();
 APIRouter.use("/user", User_router_1.UserRouter);
 APIRouter.use("/personalInfo", PersonalInfo_router_1.PersonalInfoRouter);
 APIRouter.use("/address", Address_router_1.AddressRouter);
 APIRouter.use("/addressExtraInfo", AddressExtraInfo_router_1.AddressExtraInfoRouter);
-APIRouter.use("/comment", Comment_router_1.CommentRouter);
+APIRouter.use("/profile", Profile_router_1.ProfileRouter);
 exports.default = APIRouter;

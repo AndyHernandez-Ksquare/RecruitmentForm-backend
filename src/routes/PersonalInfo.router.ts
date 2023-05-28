@@ -105,9 +105,9 @@ PersonalInfoRouter.put(
       foundPersonalInfo.country_of_birth = country_of_birth;
       foundPersonalInfo.user_id = user_id;
 
-      const updatedUser = await foundPersonalInfo.save();
+      const updatedPersonalInfo = await foundPersonalInfo.save();
 
-      return res.status(200).send(updatedUser);
+      return res.status(200).send(updatedPersonalInfo);
     } catch (error) {
       console.error(error);
       return res.sendStatus(400);

@@ -69,9 +69,9 @@ AddressExtraInfoRouter.put(
       foundAddressEI.identification_number = identification_number;
       foundAddressEI.user_id = user_id;
 
-      const updatedUser = await foundAddressEI.save();
+      const updatedAddressEI = await foundAddressEI.save();
 
-      return res.status(200).send(updatedUser);
+      return res.status(200).send(updatedAddressEI);
     } catch (error) {
       console.error(error);
       return res.sendStatus(400);

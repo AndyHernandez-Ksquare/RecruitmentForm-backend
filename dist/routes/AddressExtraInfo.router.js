@@ -64,8 +64,8 @@ exports.AddressExtraInfoRouter.put("/:addressExtraInfoId", (req, res) => __await
         foundAddressEI.CURP = CURP;
         foundAddressEI.identification_number = identification_number;
         foundAddressEI.user_id = user_id;
-        const updatedUser = yield foundAddressEI.save();
-        return res.status(200).send(updatedUser);
+        const updatedAddressEI = yield foundAddressEI.save();
+        return res.status(200).send(updatedAddressEI);
     }
     catch (error) {
         console.error(error);

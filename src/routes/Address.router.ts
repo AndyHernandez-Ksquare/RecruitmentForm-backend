@@ -92,9 +92,9 @@ AddressRouter.put("/:addressId", async (req: Request, res: Response) => {
     foundAddress.proof_of_address = proof_of_address;
     foundAddress.user_id = user_id;
 
-    const updatedUser = await foundAddress.save();
+    const updatedAddress = await foundAddress.save();
 
-    return res.status(200).send(updatedUser);
+    return res.status(200).send(updatedAddress);
   } catch (error) {
     console.error(error);
     return res.sendStatus(400);

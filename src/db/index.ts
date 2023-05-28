@@ -1,10 +1,9 @@
 import { Sequelize } from "sequelize";
-import { setupPost } from "../models/Post";
 import { setupUser } from "../models/user";
-import { setupComment } from "../models/Comments";
 import { setupPersonalInfo } from "../models/personalinfo";
 import { setupAddress } from "../models/address";
 import { setupAddressExtraInfo } from "../models/addressextrainfo";
+import { setupProfile } from "../models/profile";
 
 let sequelize: Sequelize;
 
@@ -14,7 +13,7 @@ export const startDB = async (url: string): Promise<Sequelize> => {
   setupPersonalInfo(sequelize);
   setupAddress(sequelize);
   setupAddressExtraInfo(sequelize);
-  setupPost(sequelize);
-  setupComment(sequelize);
+  setupProfile(sequelize);
+
   return sequelize;
 };

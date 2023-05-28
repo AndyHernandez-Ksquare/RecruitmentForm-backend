@@ -52,3 +52,14 @@ export interface IAddrexxExtraInfo {
   identification_number: string;
   user_id: number;
 }
+
+export interface IProfile {
+  id?: number;
+  phone: string;
+  country_code: string;
+  email: string;
+  alt_email: string;
+  reference: string;
+  other_reference: string;
+  user_id: number;
+}
