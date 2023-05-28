@@ -11,12 +11,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.startDB = void 0;
 const sequelize_1 = require("sequelize");
-const Post_1 = require("../models/Post");
 const user_1 = require("../models/user");
-const Comments_1 = require("../models/Comments");
 const personalinfo_1 = require("../models/personalinfo");
 const address_1 = require("../models/address");
 const addressextrainfo_1 = require("../models/addressextrainfo");
+const profile_1 = require("../models/profile");
 let sequelize;
 const startDB = (url) => __awaiter(void 0, void 0, void 0, function* () {
     sequelize = new sequelize_1.Sequelize(url);
@@ -24,8 +23,7 @@ const startDB = (url) => __awaiter(void 0, void 0, void 0, function* () {
     (0, personalinfo_1.setupPersonalInfo)(sequelize);
     (0, address_1.setupAddress)(sequelize);
     (0, addressextrainfo_1.setupAddressExtraInfo)(sequelize);
-    (0, Post_1.setupPost)(sequelize);
-    (0, Comments_1.setupComment)(sequelize);
+    (0, profile_1.setupProfile)(sequelize);
     return sequelize;
 });
 exports.startDB = startDB;

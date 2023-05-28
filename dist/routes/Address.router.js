@@ -76,8 +76,8 @@ exports.AddressRouter.put("/:addressId", (req, res) => __awaiter(void 0, void 0,
         foundAddress.zip = zip;
         foundAddress.proof_of_address = proof_of_address;
         foundAddress.user_id = user_id;
-        const updatedUser = yield foundAddress.save();
-        return res.status(200).send(updatedUser);
+        const updatedAddress = yield foundAddress.save();
+        return res.status(200).send(updatedAddress);
     }
     catch (error) {
         console.error(error);

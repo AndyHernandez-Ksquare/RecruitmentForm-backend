@@ -78,8 +78,8 @@ exports.PersonalInfoRouter.put("/:personalInfoId", (req, res) => __awaiter(void 
         foundPersonalInfo.state_of_birth = state_of_birth;
         foundPersonalInfo.country_of_birth = country_of_birth;
         foundPersonalInfo.user_id = user_id;
-        const updatedUser = yield foundPersonalInfo.save();
-        return res.status(200).send(updatedUser);
+        const updatedPersonalInfo = yield foundPersonalInfo.save();
+        return res.status(200).send(updatedPersonalInfo);
     }
     catch (error) {
         console.error(error);
