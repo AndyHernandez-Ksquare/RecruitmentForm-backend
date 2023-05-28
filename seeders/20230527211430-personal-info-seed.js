@@ -14,7 +14,7 @@ module.exports = {
         city_of_birth: "Queretaro",
         state_of_birth: "Queretaro",
         country_of_birth: "Mexico",
-        user_id: 5,
+        user_id: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -50,6 +50,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("PersonalInfos");
+    await queryInterface.bulkDelete("PersonalInfos", null, {});
   },
 };

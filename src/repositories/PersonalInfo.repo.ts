@@ -40,13 +40,3 @@ export const readPersonalInfo = async (
 
   return response;
 };
-
-export const readAllPosts = async (): Promise<PersonnalInfo[] | null> => {
-  try {
-    const allUsers = await PersonnalInfo.findAll();
-    return allUsers;
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
-};

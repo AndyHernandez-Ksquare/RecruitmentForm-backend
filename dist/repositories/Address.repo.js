@@ -12,20 +12,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.readPersonalInfo = exports.createPersonalInfo = void 0;
-const personalinfo_1 = __importDefault(require("../models/personalinfo"));
-const createPersonalInfo = ({ name, last_name, second_last_name, gender, gender_other, date_of_birth, city_of_birth, state_of_birth, country_of_birth, user_id, }) => __awaiter(void 0, void 0, void 0, function* () {
+exports.readAddress = exports.createAddress = void 0;
+const address_1 = __importDefault(require("../models/address"));
+const createAddress = ({ street, in_between_street_a, in_between_street_b, city, state, country, zip, proof_of_address, user_id, }) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield personalinfo_1.default.create({
-            name,
-            last_name,
-            second_last_name,
-            gender,
-            gender_other,
-            date_of_birth,
-            city_of_birth,
-            state_of_birth,
-            country_of_birth,
+        const response = yield address_1.default.create({
+            street,
+            in_between_street_a,
+            in_between_street_b,
+            city,
+            state,
+            country,
+            zip,
+            proof_of_address,
             user_id,
         });
         return response;
@@ -35,9 +34,9 @@ const createPersonalInfo = ({ name, last_name, second_last_name, gender, gender_
         return null;
     }
 });
-exports.createPersonalInfo = createPersonalInfo;
-const readPersonalInfo = (id) => __awaiter(void 0, void 0, void 0, function* () {
-    const response = yield personalinfo_1.default.findByPk(id);
+exports.createAddress = createAddress;
+const readAddress = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const response = yield address_1.default.findByPk(id);
     return response;
 });
-exports.readPersonalInfo = readPersonalInfo;
+exports.readAddress = readAddress;

@@ -3,6 +3,11 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
+    // restart id sequence
+    // await queryInterface.sequelize.query(
+    //   'ALTER SEQUENCE "Users_id_seq" RESTART WITH 1;'
+    // );
+
     return queryInterface.bulkInsert("Users", [
       {
         username: "john_doe",
