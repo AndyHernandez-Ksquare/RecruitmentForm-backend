@@ -10,23 +10,23 @@ import {
 } from "sequelize";
 import User from "./user";
 
-class AddressExtraInfo extends Model<
-  InferAttributes<AddressExtraInfo>,
-  InferCreationAttributes<AddressExtraInfo>
+class GovernmentInfo extends Model<
+  InferAttributes<GovernmentInfo>,
+  InferCreationAttributes<GovernmentInfo>
 > {
   declare id: CreationOptional<number>;
   declare CURP: string;
   declare identification_number: string;
   declare user_id: CreationOptional<number>;
   static associate(models: { User: typeof User }) {
-    AddressExtraInfo.belongsTo(models.User, {
+    GovernmentInfo.belongsTo(models.User, {
       foreignKey: "userId",
       as: "user",
     });
   }
 }
-export const setupAddressExtraInfo = (sequelize: Sequelize) => {
-  AddressExtraInfo.init(
+export const setupGovernmentInfo = (sequelize: Sequelize) => {
+  GovernmentInfo.init(
     {
       id: {
         type: DataTypes.INTEGER,
@@ -39,9 +39,9 @@ export const setupAddressExtraInfo = (sequelize: Sequelize) => {
     },
     {
       sequelize,
-      modelName: "AddressExtraInfo",
+      modelName: "GovernmentInfo",
     }
   );
 };
 
-export default AddressExtraInfo;
+export default GovernmentInfo;
