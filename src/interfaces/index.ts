@@ -46,7 +46,15 @@ export interface IAddress {
   user_id: number;
 }
 
-export interface IAddrexxExtraInfo {
+export interface IAddressExtraInfo {
+  id?: number;
+  type_of_residency: string;
+  other_residency: string;
+  people: string;
+  address_id: number;
+}
+
+export interface IGovernmentInfo {
   id?: number;
   CURP: string;
   identification_number: string;

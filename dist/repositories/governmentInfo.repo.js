@@ -12,9 +12,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.readAddressExtraInfo = exports.createAddressExtraInfo = void 0;
+exports.readGovernmentInfo = exports.createGovernmentInfo = void 0;
 const governmentInfo_1 = __importDefault(require("../models/governmentInfo"));
-const createAddressExtraInfo = ({ CURP, identification_number, user_id, }) => __awaiter(void 0, void 0, void 0, function* () {
+const createGovernmentInfo = ({ CURP, identification_number, user_id, }) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const response = yield governmentInfo_1.default.create({
             CURP,
@@ -28,9 +28,9 @@ const createAddressExtraInfo = ({ CURP, identification_number, user_id, }) => __
         return null;
     }
 });
-exports.createAddressExtraInfo = createAddressExtraInfo;
-const readAddressExtraInfo = (id) => __awaiter(void 0, void 0, void 0, function* () {
+exports.createGovernmentInfo = createGovernmentInfo;
+const readGovernmentInfo = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const response = yield governmentInfo_1.default.findByPk(id);
     return response;
 });
-exports.readAddressExtraInfo = readAddressExtraInfo;
+exports.readGovernmentInfo = readGovernmentInfo;

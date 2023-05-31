@@ -1,11 +1,11 @@
-import { IAddrexxExtraInfo } from "../interfaces";
+import { IGovernmentInfo } from "../interfaces";
 import AddressExtraInfo from "../models/governmentInfo";
 
-export const createAddressExtraInfo = async ({
+export const createGovernmentInfo = async ({
   CURP,
   identification_number,
   user_id,
-}: IAddrexxExtraInfo): Promise<AddressExtraInfo | null> => {
+}: IGovernmentInfo): Promise<AddressExtraInfo | null> => {
   try {
     const response = await AddressExtraInfo.create({
       CURP,
@@ -19,7 +19,7 @@ export const createAddressExtraInfo = async ({
   }
 };
 
-export const readAddressExtraInfo = async (
+export const readGovernmentInfo = async (
   id: number
 ): Promise<AddressExtraInfo | null> => {
   const response = await AddressExtraInfo.findByPk(id);
