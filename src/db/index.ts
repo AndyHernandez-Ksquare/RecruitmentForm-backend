@@ -5,6 +5,7 @@ import { setupAddress } from "../models/address";
 import { setupGovernmentInfo } from "../models/governmentInfo";
 import { setupProfile } from "../models/profile";
 import { setupAcademicInfo } from "../models/academicinfo";
+import { setupAddressExtraInfo } from "../models/addressextrainfo";
 
 let sequelize: Sequelize;
 
@@ -13,6 +14,7 @@ export const startDB = async (url: string): Promise<Sequelize> => {
   setupUser(sequelize);
   setupPersonalInfo(sequelize);
   setupAddress(sequelize);
+  setupAddressExtraInfo(sequelize);
   setupGovernmentInfo(sequelize);
   setupProfile(sequelize);
   setupAcademicInfo(sequelize);

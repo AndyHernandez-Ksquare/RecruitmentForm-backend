@@ -1,27 +1,29 @@
-import { Router, Request, Response } from "express";
-import User from "../models/user";
-import { IAddrexxExtraInfo } from "../interfaces";
 import {
   createAddressExtraInfo,
   readAddressExtraInfo,
-} from "../repositories/governmentInfo.repo";
+} from "./../repositories/AddressExtraInfo.repo";
+import { Router, Request, Response } from "express";
+import User from "../models/user";
+import { IAddressExtraInfo } from "../interfaces";
+import Address from "../models/address";
 
 export const AddressExtraInfoRouter = Router();
 
 // POST
 AddressExtraInfoRouter.post("/", async (req: Request, res: Response) => {
   try {
-    const { CURP, identification_number, user_id } =
-      req.body as IAddrexxExtraInfo;
-    const userExists = await User.findByPk(user_id);
+    const { type_of_residency, other_residency, people, address_id } =
+      req.body as IAddressExtraInfo;
+    const addressExists = await Address.findByPk(address_id);
 
-    if (!userExists) {
+    if (!addressExists) {
       return res.sendStatus(400);
     }
     const newAddressEI = await createAddressExtraInfo({
-      CURP,
-      identification_number,
-      user_id,
+      type_of_residency,
+      other_residency,
+      people,
+      address_id,
     });
     return res.send(newAddressEI);
   } catch (error) {
@@ -57,17 +59,18 @@ AddressExtraInfoRouter.put(
   async (req: Request, res: Response) => {
     try {
       const { addressExtraInfoId } = req.params;
-      const { CURP, identification_number, user_id } =
-        req.body as IAddrexxExtraInfo;
+      const { type_of_residency, other_residency, people, address_id } =
+        req.body as IAddressExtraInfo;
 
       const foundAddressEI = await readAddressExtraInfo(+addressExtraInfoId);
 
       if (!foundAddressEI) {
         return res.sendStatus(404);
       }
-      foundAddressEI.CURP = CURP;
-      foundAddressEI.identification_number = identification_number;
-      foundAddressEI.user_id = user_id;
+      foundAddressEI.type_of_residency = type_of_residency;
+      foundAddressEI.other_residency = other_residency;
+      foundAddressEI.people = people;
+      foundAddressEI.address_id = address_id;
 
       const updatedAddressEI = await foundAddressEI.save();
 
