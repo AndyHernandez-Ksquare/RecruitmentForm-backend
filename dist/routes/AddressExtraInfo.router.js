@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AddressExtraInfoRouter = void 0;
 const express_1 = require("express");
 const user_1 = __importDefault(require("../models/user"));
-const AddressExtraInfo_repo_1 = require("../repositories/AddressExtraInfo.repo");
+const governmentInfo_repo_1 = require("../repositories/governmentInfo.repo");
 exports.AddressExtraInfoRouter = (0, express_1.Router)();
 // POST
 exports.AddressExtraInfoRouter.post("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -25,7 +25,7 @@ exports.AddressExtraInfoRouter.post("/", (req, res) => __awaiter(void 0, void 0,
         if (!userExists) {
             return res.sendStatus(400);
         }
-        const newAddressEI = yield (0, AddressExtraInfo_repo_1.createAddressExtraInfo)({
+        const newAddressEI = yield (0, governmentInfo_repo_1.createAddressExtraInfo)({
             CURP,
             identification_number,
             user_id,
@@ -40,7 +40,7 @@ exports.AddressExtraInfoRouter.post("/", (req, res) => __awaiter(void 0, void 0,
 exports.AddressExtraInfoRouter.get("/:addressExtraInfoId/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { addressExtraInfoId } = req.params;
     try {
-        const foundAddressEI = yield (0, AddressExtraInfo_repo_1.readAddressExtraInfo)(+addressExtraInfoId);
+        const foundAddressEI = yield (0, governmentInfo_repo_1.readAddressExtraInfo)(+addressExtraInfoId);
         if (!foundAddressEI) {
             return res.sendStatus(404);
         }
@@ -57,7 +57,7 @@ exports.AddressExtraInfoRouter.put("/:addressExtraInfoId", (req, res) => __await
     try {
         const { addressExtraInfoId } = req.params;
         const { CURP, identification_number, user_id } = req.body;
-        const foundAddressEI = yield (0, AddressExtraInfo_repo_1.readAddressExtraInfo)(+addressExtraInfoId);
+        const foundAddressEI = yield (0, governmentInfo_repo_1.readAddressExtraInfo)(+addressExtraInfoId);
         if (!foundAddressEI) {
             return res.sendStatus(404);
         }
@@ -76,7 +76,7 @@ exports.AddressExtraInfoRouter.put("/:addressExtraInfoId", (req, res) => __await
 exports.AddressExtraInfoRouter.delete("/:addressExtraInfoId", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { addressExtraInfoId } = req.params;
-        const foundAddressEI = yield (0, AddressExtraInfo_repo_1.readAddressExtraInfo)(+addressExtraInfoId);
+        const foundAddressEI = yield (0, governmentInfo_repo_1.readAddressExtraInfo)(+addressExtraInfoId);
         if (!foundAddressEI) {
             return res.sendStatus(404);
         }

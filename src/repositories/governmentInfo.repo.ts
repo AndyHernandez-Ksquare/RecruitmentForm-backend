@@ -1,5 +1,5 @@
 import { IAddrexxExtraInfo } from "../interfaces";
-import AddressExtraInfo from "../models/addressextrainfo";
+import AddressExtraInfo from "../models/governmentInfo";
 
 export const createAddressExtraInfo = async ({
   CURP,

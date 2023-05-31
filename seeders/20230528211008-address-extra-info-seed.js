@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    return queryInterface.bulkInsert("AddressExtraInfos", [
+    return queryInterface.bulkInsert("GovernmentInfos", [
       {
         CURP: "HEGG560427MVZRRL04",
         identification_number: "string",
@@ -29,6 +29,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    return queryInterface.bulkDelete("AddressExtraInfos", null, {});
+    return queryInterface.bulkDelete("GovernmentInfos", null, {});
   },
 };

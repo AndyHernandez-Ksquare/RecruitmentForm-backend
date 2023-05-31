@@ -4,7 +4,7 @@ import { IAddrexxExtraInfo } from "../interfaces";
 import {
   createAddressExtraInfo,
   readAddressExtraInfo,
-} from "../repositories/AddressExtraInfo.repo";
+} from "../repositories/governmentInfo.repo";
 
 export const AddressExtraInfoRouter = Router();
 
