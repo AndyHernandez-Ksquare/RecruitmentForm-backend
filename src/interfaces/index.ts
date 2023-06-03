@@ -82,6 +82,7 @@ export interface IAcademicInfo {
 }
 
 export interface IFormalEducationInfo {
+  id?: number;
   university_name: string;
   state: string;
   country: string;
@@ -92,5 +93,13 @@ export interface IFormalEducationInfo {
   proof_degree_completed: string;
   license_completed: boolean;
   proof_license_completed: string;
+  user_id: number;
+}
+
+export interface IScholarshipInfo {
+  id?: number;
+  level: string;
+  kind: string;
+  period: number;
   user_id: number;
 }

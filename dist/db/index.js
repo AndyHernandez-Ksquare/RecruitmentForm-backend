@@ -19,6 +19,7 @@ const profile_1 = require("../models/profile");
 const academicinfo_1 = require("../models/academicinfo");
 const addressextrainfo_1 = require("../models/addressextrainfo");
 const formaleducationinfo_1 = require("../models/formaleducationinfo");
+const scholarshipInfo_1 = require("../models/scholarshipInfo");
 let sequelize;
 const startDB = (url) => __awaiter(void 0, void 0, void 0, function* () {
     sequelize = new sequelize_1.Sequelize(url);
@@ -30,6 +31,7 @@ const startDB = (url) => __awaiter(void 0, void 0, void 0, function* () {
     (0, profile_1.setupProfile)(sequelize);
     (0, academicinfo_1.setupAcademicInfo)(sequelize);
     (0, formaleducationinfo_1.setupFormalEducationInfo)(sequelize);
+    (0, scholarshipInfo_1.setupScholarshipInfo)(sequelize);
     return sequelize;
 });
 exports.startDB = startDB;

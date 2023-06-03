@@ -7,6 +7,7 @@ import { ProfileRouter } from "./Profile.router";
 import { AcademicInfoRouter } from "./AcademicInfo.router";
 import { AddressExtraInfoRouter } from "./AddressExtraInfo.router";
 import { FormalEducationInfoRouter } from "./FormalEducationInfo.router";
+import { ScholarshipInfoRouter } from "./ScholarshipInfo.router";
 const APIRouter = Router();
 
 APIRouter.use("/user", UserRouter);
@@ -17,5 +18,6 @@ APIRouter.use("/governmentInfo", GovernmentInfoRouter);
 APIRouter.use("/profile", ProfileRouter);
 APIRouter.use("/academicInfo", AcademicInfoRouter);
 APIRouter.use("/formalEducationInfo", FormalEducationInfoRouter);
+APIRouter.use("/scholarshipInfo", ScholarshipInfoRouter);
 
 export default APIRouter;
