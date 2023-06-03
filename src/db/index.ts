@@ -8,6 +8,7 @@ import { setupAcademicInfo } from "../models/academicinfo";
 import { setupAddressExtraInfo } from "../models/addressextrainfo";
 import { setupFormalEducationInfo } from "../models/formaleducationinfo";
 import { setupScholarshipInfo } from "../models/scholarshipInfo";
+import { setupBankAccountInfo } from "../models/bankaccountinfo";
 
 let sequelize: Sequelize;
 
@@ -22,6 +23,7 @@ export const startDB = async (url: string): Promise<Sequelize> => {
   setupAcademicInfo(sequelize);
   setupFormalEducationInfo(sequelize);
   setupScholarshipInfo(sequelize);
+  setupBankAccountInfo(sequelize);
 
   return sequelize;
 };

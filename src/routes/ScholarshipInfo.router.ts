@@ -1,7 +1,6 @@
 import { Router, Request, Response } from "express";
 import { IScholarshipInfo } from "../interfaces";
 import User from "../models/user";
-// import { createProfile, readProfile } from "../repositories/Profile.repo";
 import {
   createScholarshipInfo,
   readScholarshipInfo,

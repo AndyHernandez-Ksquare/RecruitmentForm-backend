@@ -15,7 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScholarshipInfoRouter = void 0;
 const express_1 = require("express");
 const user_1 = __importDefault(require("../models/user"));
-// import { createProfile, readProfile } from "../repositories/Profile.repo";
 const ScholarshipInfo_repo_1 = require("../repositories/ScholarshipInfo.repo");
 exports.ScholarshipInfoRouter = (0, express_1.Router)();
 // POST
