@@ -1,12 +1,27 @@
 import { Router } from "express";
-import { PostRouter } from "./Post.router";
 import { UserRouter } from "./User.router";
-import { CommentRouter } from "./Comment.router";
-
+import { PersonalInfoRouter } from "./PersonalInfo.router";
+import { AddressRouter } from "./Address.router";
+import { GovernmentInfoRouter } from "./GovernmentInfo.router";
+import { ProfileRouter } from "./Profile.router";
+import { AcademicInfoRouter } from "./AcademicInfo.router";
+import { AddressExtraInfoRouter } from "./AddressExtraInfo.router";
+import { FormalEducationInfoRouter } from "./FormalEducationInfo.router";
+import { ScholarshipInfoRouter } from "./ScholarshipInfo.router";
+import { BankAccountInfoRouter } from "./BankAccountInfo.router";
+import { SkillsRouter } from "./Skills.router";
 const APIRouter = Router();
 
-APIRouter.use("/post", PostRouter);
 APIRouter.use("/user", UserRouter);
-APIRouter.use("/comment", CommentRouter);
+APIRouter.use("/personalInfo", PersonalInfoRouter);
+APIRouter.use("/address", AddressRouter);
+APIRouter.use("/addressExtraInfo", AddressExtraInfoRouter);
+APIRouter.use("/governmentInfo", GovernmentInfoRouter);
+APIRouter.use("/profile", ProfileRouter);
+APIRouter.use("/academicInfo", AcademicInfoRouter);
+APIRouter.use("/formalEducationInfo", FormalEducationInfoRouter);
+APIRouter.use("/scholarshipInfo", ScholarshipInfoRouter);
+APIRouter.use("/bankAccountInfo", BankAccountInfoRouter);
+APIRouter.use("/skill", SkillsRouter);
 
 export default APIRouter;

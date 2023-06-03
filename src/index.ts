@@ -10,7 +10,6 @@ app.listen(PORT, async () => {
     if (URI_CONN) {
       const sequelize = await startDB(URI_CONN);
       await sequelize.authenticate();
-      await sequelize.sync();
       console.log(`App is up and running at port ${PORT}`);
     }
   } catch (error) {
@@ -30,3 +29,5 @@ app.listen(PORT, async () => {
 // Commands to create and run migration
 //1. Create: npx sequelize-cli db:migrate
 // 2. Run: npx sequelize-cli db:migrate --env development
+// 3. Add migration file: npx sequelize-cli migration:generate --name add-association-personalInfo-user
+// 3 Undo latest migration: sequelize db:migrate:undo

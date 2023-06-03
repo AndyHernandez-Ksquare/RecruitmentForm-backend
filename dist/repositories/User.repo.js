@@ -15,11 +15,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.readAllUsers = exports.readUser = exports.createUser = void 0;
 // import {User} from "../../types/global"
 const user_1 = __importDefault(require("../models/user"));
-const createUser = ({ firstName, userName, lastName, phone, email, }) => __awaiter(void 0, void 0, void 0, function* () {
+const createUser = ({ id, firstName, username, lastName, phone, email, }) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const response = yield user_1.default.create({
+            id,
             firstName,
-            userName,
+            username,
             lastName,
             phone,
             email,
@@ -32,8 +33,8 @@ const createUser = ({ firstName, userName, lastName, phone, email, }) => __await
     }
 });
 exports.createUser = createUser;
-const readUser = (id) => __awaiter(void 0, void 0, void 0, function* () {
-    const response = yield user_1.default.findByPk(id);
+const readUser = (username) => __awaiter(void 0, void 0, void 0, function* () {
+    const response = yield user_1.default.findOne({ where: { username } });
     return response;
 });
 exports.readUser = readUser;
