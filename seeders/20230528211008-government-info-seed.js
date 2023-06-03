@@ -5,6 +5,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     return queryInterface.bulkInsert("GovernmentInfos", [
       {
+        id: 1,
         CURP: "HEGG560427MVZRRL04",
         identification_number: "string",
         user_id: 1,
@@ -12,6 +13,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        id: 2,
         CURP: "ABC123456XYZ789",
         identification_number: "abcxyz",
         user_id: 2,
@@ -19,6 +21,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        id: 3,
         CURP: "PQR987654MNO321",
         identification_number: "pqr123",
         user_id: 3,

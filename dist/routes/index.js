@@ -8,6 +8,7 @@ const GovernmentInfo_router_1 = require("./GovernmentInfo.router");
 const Profile_router_1 = require("./Profile.router");
 const AcademicInfo_router_1 = require("./AcademicInfo.router");
 const AddressExtraInfo_router_1 = require("./AddressExtraInfo.router");
+const FormalEducationInfo_router_1 = require("./FormalEducationInfo.router");
 const APIRouter = (0, express_1.Router)();
 APIRouter.use("/user", User_router_1.UserRouter);
 APIRouter.use("/personalInfo", PersonalInfo_router_1.PersonalInfoRouter);
@@ -16,4 +17,5 @@ APIRouter.use("/addressExtraInfo", AddressExtraInfo_router_1.AddressExtraInfoRou
 APIRouter.use("/governmentInfo", GovernmentInfo_router_1.GovernmentInfoRouter);
 APIRouter.use("/profile", Profile_router_1.ProfileRouter);
 APIRouter.use("/academicInfo", AcademicInfo_router_1.AcademicInfoRouter);
+APIRouter.use("/formalEducationInfo", FormalEducationInfo_router_1.FormalEducationInfoRouter);
 exports.default = APIRouter;

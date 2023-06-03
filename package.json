@@ -9,7 +9,8 @@
     "build": "rm -rf dist && tsc",
     "undoMigration": "npx sequelize-cli db:migrate:undo",
     "createMigration": "npx sequelize-cli db:migrate",
-    "seedAll": "npx sequelize-cli db:seed:all"
+    "seedAll": "npx sequelize-cli db:seed:all",
+    "seedUndoAll": "npx sequelize-cli db:seed:undo:all"
   },
   "keywords": [],
   "author": "",

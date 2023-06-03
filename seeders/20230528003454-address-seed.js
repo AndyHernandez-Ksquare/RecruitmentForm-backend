@@ -5,6 +5,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     return queryInterface.bulkInsert("Addresses", [
       {
+        id: 1,
         street: "437 Lytton",
         in_between_street_a: "437 Lytton",
         in_between_street_b: "437 Lytton",
@@ -18,6 +19,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        id: 2,
         street: "123 Main St",
         in_between_street_a: "First Ave",
         in_between_street_b: "Second Ave",
@@ -31,6 +33,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        id: 3,
         street: "789 Elm St",
         in_between_street_a: "Third Ave",
         in_between_street_b: "Fourth Ave",

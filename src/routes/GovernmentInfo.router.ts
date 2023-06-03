@@ -82,18 +82,18 @@ GovernmentInfoRouter.put(
 // DELETE
 
 GovernmentInfoRouter.delete(
-  "/:addressExtraInfoId",
+  "/:governmentInfoId",
   async (req: Request, res: Response) => {
     try {
-      const { addressExtraInfoId } = req.params;
+      const { governmentInfoId } = req.params;
 
-      const foundAddressEI = await readGovernmentInfo(+addressExtraInfoId);
+      const foundGovernmentInfo = await readGovernmentInfo(+governmentInfoId);
 
-      if (!foundAddressEI) {
+      if (!foundGovernmentInfo) {
         return res.sendStatus(404);
       }
 
-      await foundAddressEI.destroy();
+      await foundGovernmentInfo.destroy();
 
       return res.sendStatus(204);
     } catch (error) {
