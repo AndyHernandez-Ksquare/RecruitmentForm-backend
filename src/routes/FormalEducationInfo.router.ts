@@ -29,7 +29,7 @@ FormalEducationInfoRouter.post("/", async (req: Request, res: Response) => {
     if (!userExists) {
       return res.sendStatus(400);
     }
-    const newGovernmentInfo = await createFormalEducationInfo({
+    const newFormalEducationInfo = await createFormalEducationInfo({
       university_name,
       state,
       country,
@@ -42,7 +42,7 @@ FormalEducationInfoRouter.post("/", async (req: Request, res: Response) => {
       proof_license_completed,
       user_id,
     });
-    return res.send(newGovernmentInfo);
+    return res.send(newFormalEducationInfo);
   } catch (error) {
     console.error(error);
   }

@@ -25,7 +25,7 @@ exports.FormalEducationInfoRouter.post("/", (req, res) => __awaiter(void 0, void
         if (!userExists) {
             return res.sendStatus(400);
         }
-        const newGovernmentInfo = yield (0, FormalEducationInfo_repo_1.createFormalEducationInfo)({
+        const newFormalEducationInfo = yield (0, FormalEducationInfo_repo_1.createFormalEducationInfo)({
             university_name,
             state,
             country,
@@ -38,7 +38,7 @@ exports.FormalEducationInfoRouter.post("/", (req, res) => __awaiter(void 0, void
             proof_license_completed,
             user_id,
         });
-        return res.send(newGovernmentInfo);
+        return res.send(newFormalEducationInfo);
     }
     catch (error) {
         console.error(error);

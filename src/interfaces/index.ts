@@ -103,3 +103,10 @@ export interface IScholarshipInfo {
   period: number;
   user_id: number;
 }
+
+export interface IBankAccount {
+  acc_number: string;
+  clabe: string;
+  bank: string;
+  user_id: number;
+}
