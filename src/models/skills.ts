@@ -7,42 +7,42 @@ import {
   InferCreationAttributes,
 } from "sequelize";
 import User from "./user";
-
-class ScholarshipInfo extends Model<
-  InferAttributes<ScholarshipInfo>,
-  InferCreationAttributes<ScholarshipInfo>
+class Skills extends Model<
+  InferAttributes<Skills>,
+  InferCreationAttributes<Skills>
 > {
   declare id: CreationOptional<number>;
-  declare level: string;
-  declare kind: string;
-  declare period: number;
+  declare preferred_programming_language: string;
+  declare experience: string;
+  declare disability: string;
   declare user_id: CreationOptional<number>;
+
   static associate(models: { User: typeof User }) {
-    ScholarshipInfo.belongsTo(models.User, {
+    Skills.belongsTo(models.User, {
       foreignKey: "userId",
       as: "user",
     });
   }
 }
 
-export const setupScholarshipInfo = (sequelize: Sequelize) => {
-  ScholarshipInfo.init(
+export const setupSkills = (sequelize: Sequelize) => {
+  Skills.init(
     {
       id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
       },
-      level: DataTypes.STRING,
-      kind: DataTypes.STRING,
-      period: DataTypes.INTEGER,
+      preferred_programming_language: DataTypes.STRING,
+      experience: DataTypes.STRING,
+      disability: DataTypes.STRING,
       user_id: DataTypes.INTEGER,
     },
     {
       sequelize,
-      modelName: "AcademicInfo",
+      modelName: "Skills",
     }
   );
 };
 
-export default ScholarshipInfo;
+export default Skills;

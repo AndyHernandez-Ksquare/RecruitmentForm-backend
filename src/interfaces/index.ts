@@ -105,8 +105,17 @@ export interface IScholarshipInfo {
 }
 
 export interface IBankAccount {
+  id?: number;
   acc_number: string;
   clabe: string;
   bank: string;
+  user_id: number;
+}
+
+export interface ISkills {
+  id?: number;
+  preferred_programming_language: string;
+  experience: string;
+  disability: string;
   user_id: number;
 }
