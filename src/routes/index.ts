@@ -9,6 +9,7 @@ import { AddressExtraInfoRouter } from "./AddressExtraInfo.router";
 import { FormalEducationInfoRouter } from "./FormalEducationInfo.router";
 import { ScholarshipInfoRouter } from "./ScholarshipInfo.router";
 import { BankAccountInfoRouter } from "./BankAccountInfo.router";
+import { SkillsRouter } from "./Skills.router";
 const APIRouter = Router();
 
 APIRouter.use("/user", UserRouter);
@@ -21,5 +22,6 @@ APIRouter.use("/academicInfo", AcademicInfoRouter);
 APIRouter.use("/formalEducationInfo", FormalEducationInfoRouter);
 APIRouter.use("/scholarshipInfo", ScholarshipInfoRouter);
 APIRouter.use("/bankAccountInfo", BankAccountInfoRouter);
+APIRouter.use("/skill", SkillsRouter);
 
 export default APIRouter;
