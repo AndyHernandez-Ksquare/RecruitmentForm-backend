@@ -7,7 +7,10 @@ import {
   InferCreationAttributes,
 } from "sequelize";
 import User from "./user";
-class FormalEducationInfo extends Model {
+class FormalEducationInfo extends Model<
+  InferAttributes<FormalEducationInfo>,
+  InferCreationAttributes<FormalEducationInfo>
+> {
   declare id: CreationOptional<number>;
   declare university_name: string;
   declare state: string;
