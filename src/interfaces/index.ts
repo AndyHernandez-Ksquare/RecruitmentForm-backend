@@ -80,3 +80,17 @@ export interface IAcademicInfo {
   other_education: string;
   user_id: number;
 }
+
+export interface IFormalEducationInfo {
+  university_name: string;
+  state: string;
+  country: string;
+  career_name: string;
+  classes_completed: boolean;
+  proof_classes_completed: string;
+  degree_completed: boolean;
+  proof_degree_completed: string;
+  license_completed: boolean;
+  proof_license_completed: string;
+  user_id: number;
+}

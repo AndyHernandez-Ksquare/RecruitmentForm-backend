@@ -10,6 +10,7 @@ module.exports = {
 
     return queryInterface.bulkInsert("Users", [
       {
+        id: 1,
         username: "john_doe",
         firstName: "John",
         lastName: "Doe",
@@ -19,6 +20,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        id: 2,
         username: "jane_smith",
         firstName: "Jane",
         lastName: "Smith",
@@ -28,6 +30,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        id: 3,
         username: "michael_johnson",
         firstName: "Michael",
         lastName: "Johnson",

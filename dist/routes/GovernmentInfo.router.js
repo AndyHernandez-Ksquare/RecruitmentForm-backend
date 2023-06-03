@@ -73,14 +73,14 @@ exports.GovernmentInfoRouter.put("/:governmentInfoId", (req, res) => __awaiter(v
     }
 }));
 // DELETE
-exports.GovernmentInfoRouter.delete("/:addressExtraInfoId", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.GovernmentInfoRouter.delete("/:governmentInfoId", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { addressExtraInfoId } = req.params;
-        const foundAddressEI = yield (0, GovernmentInfo_repo_1.readGovernmentInfo)(+addressExtraInfoId);
-        if (!foundAddressEI) {
+        const { governmentInfoId } = req.params;
+        const foundGovernmentInfo = yield (0, GovernmentInfo_repo_1.readGovernmentInfo)(+governmentInfoId);
+        if (!foundGovernmentInfo) {
             return res.sendStatus(404);
         }
-        yield foundAddressEI.destroy();
+        yield foundGovernmentInfo.destroy();
         return res.sendStatus(204);
     }
     catch (error) {

@@ -5,6 +5,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     return queryInterface.bulkInsert("AddressExtraInfos", [
       {
+        id: 1,
         type_of_residency: "rented",
         other_residency: "mortgage",
         people: "alone",
@@ -13,6 +14,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        id: 2,
         type_of_residency: "owned",
         other_residency: null,
         people: "family",
@@ -21,6 +23,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
+        id: 3,
         type_of_residency: "rented",
         other_residency: "lease",
         people: "roommates",
